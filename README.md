@@ -18,6 +18,7 @@ In this article we will discuss in details about ‘Pusher’, the most popular,
 
 
 #### Prerequisite Knowledge:
+Before getting started let's take a look of the followings that are needed while working on **Laravel Broadcasting**. For better understanding I will recommened specifically to read Laravel official docs of **Event**, **Listener** and **Model Observer**. 
 ###### (A) Event and Listener:
 Though Laravel utilize event broadcasting by using **Pusher** channel (also **Reverb**, **Ably**) to make realtime communication of datas between server and client it is very important to know about Laravel’s [events and listeners]( https://laravel.com/docs/12.x/events).
 
