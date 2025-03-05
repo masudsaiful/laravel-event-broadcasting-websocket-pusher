@@ -41,7 +41,11 @@ Step 1: Create a Free Pusher Account
 🔹 Click on **Sign up** for free.    
 🔹 Follow the Instructions.  
 🔹 **Verify E-mail** if required.  
-
+Step 2: Create a New Pusher App  
+🔹 After logging in, go to **Pusher Dashboard**.     
+🔹 Click **Create App**.    
+🔹 Select **Frontend** and **Backend** technologies.  
+🔹 Click **Create App**.  
 
 
 
