@@ -1,1 +1,9 @@
+remote_theme: pages-themes/tactile@v0.2.0
+plugins:
+- jekyll-remote-theme # add this line to the plugins list if you already have one
+
+title: 'Laravel Broadcasting : WebSockets: Pusher. Learn how to realtime, live-updating user interfaces in Laravel Application?'
+description: Laravel 12.x brings several improvements and updates to enhance the framework's performance and usability.
+
+
 
