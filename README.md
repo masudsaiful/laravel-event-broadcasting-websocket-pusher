@@ -40,8 +40,8 @@ Since we are working with **Laravel event broadcasting**, we will use **Pusher C
 🔹 Got to **[Pusher's Website](https://pusher.com/)**.     
 🔹 Click on **Sign up** for free.    
 🔹 Follow the Instructions.  
-🔹 **Verify E-mail** if required.  
-**Step 2: Create a New Pusher App**  
+🔹 **Verify E-mail** if required.<br /><br />
+***Step 2: Create a New Pusher App***  
 🔹 After logging in, go to **Pusher Dashboard**.     
 🔹 Click **Create App**.    
 🔹 Select **Frontend** and **Backend** technologies.  
