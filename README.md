@@ -18,14 +18,13 @@ In this article we will discuss in details about ‘Pusher’, the most popular,
 
 
 #### Prerequisite Knowledge:
-###### Event and Listener:
+###### (A) Event and Listener:
 Though Laravel utilize event broadcasting by using **Pusher** channel (also **Reverb**, **Ably**) to make realtime communication of datas between server and client it is very important to know about Laravel’s [events and listeners]( https://laravel.com/docs/12.x/events).
 
-###### Pusher:
+###### (B) Pusher:
 In this article we are focusing mainly on **Pusher**, a **websocket service** that Laravel uses to **Broadcast Events**. It allows real-time updates without page reloads between the Laravel backend and the frontend (**React**, **Vue**, etc.) using **WebSockets**.
 
-***Pusher Event Broadcasting Flow in Laravel:***
-
+***Pusher Event Broadcasting Flow in Laravel:***    
 🔹 **User Action** → Any action (e.g., creating or updating or deleting a user etc.).   
 🔹 **Event Fired** → Dispatched event when an action occured (e.g., UserCreated event dispatched on user create action).  
 🔹 **Event Broadcast** → Sent via Pusher Websockets.   
