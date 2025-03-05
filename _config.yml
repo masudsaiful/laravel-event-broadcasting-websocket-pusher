@@ -2,7 +2,7 @@ remote_theme: pages-themes/tactile@v0.2.0
 plugins:
 - jekyll-remote-theme # add this line to the plugins list if you already have one
 
-title: 'Laravel Event Broadcasting: WebSockets: Pusher. Learn how to realtime, live-updating user interfaces in Laravel Application?'
+title: 'Laravel Event Broadcasting: WebSockets: Pusher. Learn how to realtime, live-updating user interfaces in Laravel Application'
 description: This article explores Laravel event broadcasting using Pusher channels and WebSockets to enable real-time communication, allowing client-side users to receive and handle server-side data updates instantly.
 
 
