@@ -3,7 +3,7 @@ plugins:
 - jekyll-remote-theme # add this line to the plugins list if you already have one
 
 title: 'Laravel Broadcasting : WebSockets: Pusher. Learn how to realtime, live-updating user interfaces in Laravel Application?'
-description: Laravel 12.x brings several improvements and updates to enhance the framework's performance and usability.
+description: This article explores Laravel event broadcasting using Pusher channels and WebSockets to enable real-time communication, allowing client-side users to receive and handle server-side data updates instantly.
 
 
 
