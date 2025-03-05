@@ -35,6 +35,15 @@ Pusher offers two services:
 🔹 **Pusher Channels** → Used for real-time event broadcasting (This is what we need for Laravel).     
 🔹 **Pusher Beams** → Used for push notifications (Not needed for Laravel broadcasting).    
 Since we are working with **Laravel event broadcasting**, we will use **Pusher Channels**.
+
+
+#### Settings, Configurations, Package Installations:
+###### (A) Event and Listener:
+Though Laravel utilize event broadcasting by using **Pusher** channel (also **Reverb**, **Ably**) to make realtime communication of datas between server and client it is very important to know about Laravel’s [events and listeners]( https://laravel.com/docs/12.x/events).
+
+###### (B) Pusher:
+In this article we are focusing mainly on **Pusher**, a **websocket service** that Laravel uses to **Broadcast Events**. It allows real-time updates without page reloads between the Laravel backend and the frontend (**React**, **Vue**, etc.) using **WebSockets**.
+
 * ***How to Get Pusher Credentials (Free Signup) (Laravel 11.x and 12.x perspective):***  
 ***Step 1: Create a Free Pusher Account***  
 🔹 Got to **[Pusher's Website](https://pusher.com/)**.     
