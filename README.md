@@ -46,8 +46,13 @@ Since we are working with **Laravel event broadcasting**, we will use **Pusher C
 🔹 Click **Create App**.    
 🔹 Select **Frontend** and **Backend** technologies.  
 🔹 Click **Create App**.  
-
-
+***Step 2: Get Pusher Credentials***  
+Once the app is created, you will see the **App Keys**
+🔹 **App ID**.     
+🔹 **Key**.    
+🔹 **Secret**.  
+🔹 **Cluster**. 
+These credentials are needed for **Laravel Broadcasting**
 
 
 
