@@ -30,10 +30,10 @@ In this article we are focusing mainly on **Pusher**, a **websocket service** th
 🔹 **Event Broadcast** → Sent via Pusher Websockets.   
 🔹 **Client Listens** → Frontend or JavaScript listens to Pusher updates.  
 🔹 **UI Updates in Real-Times**
-* ***How to Get Pusher Credentials (Laravel 11.x and 12.x perspective):***
-Pusher offers two services:
-🔹 **Pusher Channels** → Used for real-time event broadcasting (This is what we need for Laravel).   
-🔹 **Pusher Beams** → Used for push notifications (Not needed for Laravel broadcasting).  
+* ***How to Get Pusher Credentials (Laravel 11.x and 12.x perspective):***  
+Pusher offers two services:  
+🔹 **Pusher Channels** → Used for real-time event broadcasting (This is what we need for Laravel).     
+🔹 **Pusher Beams** → Used for push notifications (Not needed for Laravel broadcasting).    
 Since we are working with **Laravel event broadcasting**, we will use **Pusher Channels**.
 
 
