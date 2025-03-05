@@ -24,18 +24,18 @@ Though Laravel utilize event broadcasting by using **Pusher** channel (also **Re
 ###### (B) Pusher:
 In this article we are focusing mainly on **Pusher**, a **websocket service** that Laravel uses to **Broadcast Events**. It allows real-time updates without page reloads between the Laravel backend and the frontend (**React**, **Vue**, etc.) using **WebSockets**.
 
-* ***(i) Pusher Event Broadcasting Flow in Laravel:***    
+* ***Pusher Event Broadcasting Flow in Laravel:***    
 🔹 **User Action** → Any action (e.g., creating or updating or deleting a user etc.).   
 🔹 **Event Fired** → Dispatched event when an action occured (e.g., UserCreated event dispatched on user create action).  
 🔹 **Event Broadcast** → Sent via Pusher Websockets.   
 🔹 **Client Listens** → Frontend or JavaScript listens to Pusher updates.  
 🔹 **UI Updates in Real-Times**
-* ***(ii) Type of Pusher Services:***  
+* ***Type of Pusher Services:***  
 Pusher offers two services:  
 🔹 **Pusher Channels** → Used for real-time event broadcasting (This is what we need for Laravel).     
 🔹 **Pusher Beams** → Used for push notifications (Not needed for Laravel broadcasting).    
 Since we are working with **Laravel event broadcasting**, we will use **Pusher Channels**.
-* ***(iii) How to Get Pusher Credentials (Free Signup) (Laravel 11.x and 12.x perspective):***  
+* ***How to Get Pusher Credentials (Free Signup) (Laravel 11.x and 12.x perspective):***  
 ***Step 1: Create a Free Pusher Account***  
 🔹 Got to **[Pusher's Website](https://pusher.com/)**.     
 🔹 Click on **Sign up** for free.    
@@ -47,13 +47,13 @@ Since we are working with **Laravel event broadcasting**, we will use **Pusher C
 🔹 Select **Frontend** and **Backend** technologies.  
 🔹 Click **Create App**.<br /><br /> 
 ***Step 3: Get Pusher Credentials***  
-Once the app is created, you will see the **App Keys**
+Once the app is created, you will see the **App Keys**  
 🔹 **App ID**.     
 🔹 **Key**.    
 🔹 **Secret**.  
 🔹 **Cluster**.   
 These credentials are needed for **Laravel Broadcasting**
-* ***(iv) Configure Pusher in Laravel 11.x or 12.x:***  
+* ***Configure Pusher in Laravel 11.x or 12.x:***  
 ***Step 1: Create a Free Pusher Account***  
 🔹 Got to **[Pusher's Website](https://pusher.com/)**.     
 🔹 Click on **Sign up** for free.    
@@ -65,11 +65,11 @@ These credentials are needed for **Laravel Broadcasting**
 🔹 Select **Frontend** and **Backend** technologies.  
 🔹 Click **Create App**.<br /><br /> 
 ***Step 3: Get Pusher Credentials***  
-Once the app is created, you will see the **App Keys**
+Once the app is created, you will see the **App Keys**  
 🔹 **App ID**.     
 🔹 **Key**.    
 🔹 **Secret**.  
-🔹 **Cluster**.   
+🔹 **Cluster**.     
 These credentials are needed for **Laravel Broadcasting**
 
 
