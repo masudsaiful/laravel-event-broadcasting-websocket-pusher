@@ -72,12 +72,20 @@ If you have no `config/broadcasting.php` and `routes/channels` files in your Lar
 ```
 This command will create the `config/broadcasting.php` and `routes/channels` files.
 
-***Step 3: Get Pusher Credentials***  
-Once the app is created, you will see the **App Keys**  
-🔹 **App ID**.     
-🔹 **Key**.    
-🔹 **Secret**.  
-🔹 **Cluster**.     
-These credentials are needed for **Laravel Broadcasting**
+***Step 3: Configure Broadcasting in Laravel***  
+Once **config/broadcasting.php** configuration file, find the **pusher** section and ensure it matches.   
+```php
+  'pusher' => [
+      'driver' => 'pusher',
+      'key' => env('PUSHER_APP_KEY'),
+      'secret' => env('PUSHER_APP_SECRET'),
+      'app_id' => env('PUSHER_APP_ID'),
+      'options' => [
+          'cluster' => env('PUSHER_APP_CLUSTER'),
+          'useTLS' => true,
+      ],
+  ],
+```   
+Ensure that set `useTLS => true` for secure WebSocket connections.
 
 
