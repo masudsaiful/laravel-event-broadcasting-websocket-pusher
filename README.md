@@ -61,6 +61,7 @@ Open .env in Laravel Project and add:
 > PUSHER_APP_KEY:your_app_key      
 > PUSHER_APP_SECRET:your_app_secret  
 > PUSHER_APP_CLUSTER:your_app_cluster
+
 Replace **your_app_id, your_app_key, your_app_secret, your_app_cluster** with the actual values from the **Pusher dashboard**.
 
 ***Step 2: Create a New Pusher App***  
