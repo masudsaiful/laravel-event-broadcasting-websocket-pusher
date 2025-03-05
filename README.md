@@ -36,12 +36,12 @@ Pusher offers two services:
 🔹 **Pusher Beams** → Used for push notifications (Not needed for Laravel broadcasting).    
 Since we are working with **Laravel event broadcasting**, we will use **Pusher Channels**.
 * ***How to Get Pusher Credentials (Free Signup) (Laravel 11.x and 12.x perspective):***  
-Step 1: Create a Free Pusher Account  
+**Step 1: Create a Free Pusher Account**  
 🔹 Got to **[Pusher's Website](https://pusher.com/)**.     
 🔹 Click on **Sign up** for free.    
 🔹 Follow the Instructions.  
 🔹 **Verify E-mail** if required.  
-Step 2: Create a New Pusher App  
+**Step 2: Create a New Pusher App**  
 🔹 After logging in, go to **Pusher Dashboard**.     
 🔹 Click **Create App**.    
 🔹 Select **Frontend** and **Backend** technologies.  
