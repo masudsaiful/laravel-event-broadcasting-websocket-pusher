@@ -58,18 +58,20 @@ Once we have the **Pusher** credentials, we can now configure them in Laravel.<b
 ***Step 1: Add Credential to Laravel .env file***  
 Open .env in Laravel Project and add:
 ```php
-PUSHER_APP_ID:your_app_id      
-PUSHER_APP_KEY:your_app_key      
-PUSHER_APP_SECRET:your_app_secret  
-PUSHER_APP_CLUSTER:your_app_cluster
+  PUSHER_APP_ID:your_app_id      
+  PUSHER_APP_KEY:your_app_key      
+  PUSHER_APP_SECRET:your_app_secret  
+  PUSHER_APP_CLUSTER:your_app_cluster
 ```
 Replace **your_app_id, your_app_key, your_app_secret, your_app_cluster** with the actual values from the **Pusher dashboard**.
 
-***Step 2: Create a New Pusher App***  
-🔹 After logging in, go to **Pusher Dashboard**.     
-🔹 Click **Create App**.    
-🔹 Select **Frontend** and **Backend** technologies.  
-🔹 Click **Create App**.<br /><br /> 
+***Step 2: Check Configuration and Channels in Laravel***  
+If you have no `config/broadcasting.php` and `routes/channels` files in your Laravel project, run the following command in terminal.     
+```php
+  php artisan install:broadcasting
+```
+This command will create the `config/broadcasting.php` and `routes/channels` files.
+
 ***Step 3: Get Pusher Credentials***  
 Once the app is created, you will see the **App Keys**  
 🔹 **App ID**.     
