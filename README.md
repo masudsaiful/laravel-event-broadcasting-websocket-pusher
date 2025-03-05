@@ -24,7 +24,7 @@ Though Laravel utilize event broadcasting by using **Pusher** channel (also **Re
 ###### (B) Pusher:
 In this article we are focusing mainly on **Pusher**, a **websocket service** that Laravel uses to **Broadcast Events**. It allows real-time updates without page reloads between the Laravel backend and the frontend (**React**, **Vue**, etc.) using **WebSockets**.
 
-***Pusher Event Broadcasting Flow in Laravel:***    
+* ***Pusher Event Broadcasting Flow in Laravel:***    
 🔹 **User Action** → Any action (e.g., creating or updating or deleting a user etc.).   
 🔹 **Event Fired** → Dispatched event when an action occured (e.g., UserCreated event dispatched on user create action).  
 🔹 **Event Broadcast** → Sent via Pusher Websockets.   
@@ -32,13 +32,11 @@ In this article we are focusing mainly on **Pusher**, a **websocket service** th
 🔹 **UI Updates in Real-Times**
 
 * ***How to Get Pusher Credentials (Laravel 11.x and 12.x perspective):***  
-Pusher offers two services:  
+Pusher offers two services:
+
 🔹 **Pusher Channels** → Used for real-time event broadcasting (This is what we need for Laravel).    
-🔹 **Pusher Beams** → Used for push notifications (Not needed for Laravel broadcasting).    
+🔹 **Pusher Beams** → Used for push notifications (Not needed for Laravel broadcasting).
+
 Since we are working with **Laravel event broadcasting**, we will use **Pusher Channels**.
 
-> We should update the following dependencies in the application's composer.json file while upgrading from version 11.x:      
-> * laravel/framework to ^12.0.    
-> * phpunit/phpunit to ^11.0.    
-> * pestphp/pest to ^3.0.
 
