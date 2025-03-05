@@ -12,6 +12,7 @@ According Laravel the core concepts behind broadcasting are simple: clients conn
 There are currently three server-side broadcasting drivers by default in Laravel:        
 > * [Laravel Reverb](https://reverb.laravel.com/)   
 > * [Pusher Channels](https://pusher.com/channels)   
-> * [Ably]( https://ably.com/)  
+> * [Ably]( https://ably.com/)
+  
 In this article we will discuss in details about ‘Pusher’, the most popular, old and leader in realtime communication. By incorporating Laravel’s event broadcasting using ‘Pusher’ connection client can be handled with updated datas in the frontend without refreshing or reloading pages while data updated in the backend. 
 
