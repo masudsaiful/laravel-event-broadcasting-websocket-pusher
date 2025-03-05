@@ -54,7 +54,7 @@ Once the app is created, you will see the **App Keys**
 🔹 **Cluster**.   
 These credentials are needed for **Laravel Broadcasting**
 * ***Configure Pusher in Laravel 11.x or 12.x:***  
-Once we have the **Pusher** credentials, we can now configure them in Laravel.<br /> 
+Once we have the **Pusher** credentials, we can now configure them in Laravel.<br /><br /> 
 ***Step 1: Add Credential to Laravel .env file***  
 Open .env in Laravel Project and add:
 ```php
