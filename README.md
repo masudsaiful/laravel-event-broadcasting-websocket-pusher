@@ -1,6 +1,6 @@
-
+<br /><br />
 #### Real Scenario:
-Imagine you have a Laravel application where admin doing some tasks like:  sending email to users from the application’s email facilities. So, how the logged in user knows that an important email dispatched to him while he is also doing his task in the application? May be the logged in user by clicking the email lists button to check if there has any new email arrived or may be another option – automatic notification that a new email arrived. For the first scenario when clicking email list button to view, an API request can call to retrieve the email list or by refreshing, reloading pages but for the second, need a mechanism to notify user that a new email arrived and here comes the WebSockets that are used to implement real-time, live-updating user interfaces.
+Imagine you have a Laravel application where admin doing some tasks like:  sending email to users from the application’s email facilities. So, how the logged in user knows that an important email dispatched to him while he is also doing his task in the application? May be the logged in user by clicking the email lists button to check if there has any new email arrived or may be another option – automatic notification that a new email arrived. For the first scenario when clicking email list button to view, an API request can call to retrieve the email list or by refreshing, reloading pages but for the second, need a mechanism to notify user that a new email arrived and here comes the WebSockets that are used to implement real-time, live-updating user interfaces.<br /><br />
 
 
 
@@ -17,7 +17,7 @@ According Laravel the core concepts behind broadcasting are simple: clients conn
 
 
 
-
+<br /><br />
 #### Supporting Drivers according Laravel 12.x:
 **There are currently three server-side broadcasting drivers by default in Laravel:**        
 > * [Laravel Reverb](https://reverb.laravel.com/)   
@@ -28,7 +28,7 @@ In this article we will discuss in details about ‘Pusher’, the most popular,
 
 
 
-
+<br /><br />
 #### Prerequisite Knowledge:
 Before getting started let's take a look of the followings that are needed while working on **Laravel Broadcasting**. For better understanding I will recommened specifically to read Laravel official docs of **Event**, **Listener**, **Model Observer** and **Broadcasting**. 
 ###### (A) Event and Listener:
@@ -83,6 +83,8 @@ Since we are working with **Laravel event broadcasting**, we will use **Pusher C
 🔹 When implementing real-time features in **React, Vue, or any frontend framework** with Laravel.
 
 
+
+<br /><br />
 #### Necessary Package Installation:
 ###### (A) Backend (Laravel) Package Installation:
 
