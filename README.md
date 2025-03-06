@@ -27,12 +27,12 @@ In this article we will discuss in details about ‘Pusher’, the most popular,
 
 #### Prerequisite Knowledge:
 Before getting started let's take a look of the followings that are needed while working on **Laravel Broadcasting**. For better understanding I will recommened specifically to read Laravel official docs of **Event**, **Listener**, **Model Observer** and **Broadcasting**. 
+
 ###### (A) Event and Listener:
 Though Laravel utilize event broadcasting by using **Pusher** channel (also **Reverb**, **Ably**) to make realtime communication of datas between server and client it is very important to know about Laravel’s [events and listeners]( https://laravel.com/docs/12.x/events).
 
 ###### (B) Pusher:
-In this article we are focusing mainly on **Pusher**, a **websocket service** that Laravel uses to **Broadcast Events**. It allows real-time updates without page reloads between the Laravel backend and the frontend (**React**, **Vue**, etc.) using **WebSockets**.
-
+In this article we are focusing mainly on **Pusher**, a **websocket service** that Laravel uses to **Broadcast Events**. It allows real-time updates without page reloads between the Laravel backend and the frontend (**React**, **Vue**, etc.) using **WebSockets**.  
 * ***Pusher Event Broadcasting Flow in Laravel:***    
 🔹 **User Action** → Any action (e.g., creating or updating or deleting a user etc.).   
 🔹 **Event Fired** → Dispatched event when an action occured (e.g., UserCreated event dispatched on user create action).  
@@ -45,8 +45,7 @@ Pusher offers two services:
 🔹 **Pusher Beams** → Used for push notifications (Not needed for Laravel broadcasting).    
 Since we are working with **Laravel event broadcasting**, we will use **Pusher Channels**.
 
-###### (C) Broadcast Channels:
-
+###### (C) Broadcast Channels:  
 * ***What is it?:***    
 🔹 Channels define who can listen to a broadcasted event.   
 🔹 Laravel supports public, private, and presence channels.  
