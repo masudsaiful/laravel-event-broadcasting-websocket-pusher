@@ -7,14 +7,14 @@ When some data is updated on the server, sometimes client need to be handled the
 
 According Laravel the core concepts behind broadcasting are simple: clients connect to named channels on the frontend, while your Laravel application broadcasts events to these channels on the backend. These events can contain any additional data you wish to make available to the frontend.
 
-At a glance Laravel Event Broadcasting Workflow:        
+**At a glance Laravel Event Broadcasting Workflow:**        
 > * The backend dispatches an event to hosted websocket   
 > * The hosted websocket broadcast the event to listen by the subscribers  
 > * The frontend listens to the events using Laravel Echo and updates the UI
 
 
 #### Supporting Drivers according Laravel 12.x:
-There are currently three server-side broadcasting drivers by default in Laravel:        
+**There are currently three server-side broadcasting drivers by default in Laravel:**        
 > * [Laravel Reverb](https://reverb.laravel.com/)   
 > * [Pusher Channels](https://pusher.com/channels)   
 > * [Ably]( https://ably.com/)
@@ -43,19 +43,23 @@ Pusher offers two services:
 Since we are working with **Laravel event broadcasting**, we will use **Pusher Channels**.
 
 ###### (C) Broadcast Channels:
-In this article we are focusing mainly on **Pusher**, a **websocket service** that Laravel uses to **Broadcast Events**. It allows real-time updates without page reloads between the Laravel backend and the frontend (**React**, **Vue**, etc.) using **WebSockets**.
 
-* ***Pusher Event Broadcasting Flow in Laravel:***    
-🔹 **User Action** → Any action (e.g., creating or updating or deleting a user etc.).   
-🔹 **Event Fired** → Dispatched event when an action occured (e.g., UserCreated event dispatched on user create action).  
-🔹 **Event Broadcast** → Sent via Pusher Websockets.   
-🔹 **Client Listens** → Frontend or JavaScript listens to Pusher updates.  
-🔹 **UI Updates in Real-Times**
-* ***Type of Pusher Services:***  
-Pusher offers two services:  
-🔹 **Pusher Channels** → Used for real-time event broadcasting (This is what we need for Laravel).     
-🔹 **Pusher Beams** → Used for push notifications (Not needed for Laravel broadcasting).    
-Since we are working with **Laravel event broadcasting**, we will use **Pusher Channels**.
+* ***What is it?:***    
+🔹 Channels define who can listen to a broadcasted event.   
+🔹 Laravel supports public, private, and presence channels.  
+* ***Types of Channels:***  
+🔹 **Public Channel** → Anyone can listen (e.g., general announcements).     
+🔹 **Private Channel** → Only authorized users can listen (e.g., notifications for a specific user).
+🔹 **Presence Channel** → Like private channels but tracks active users (e.g., online user lists).     
+* ***Purpose:***  
+🔹 Controls **who can access broadcasted events**.     
+🔹 Ensures **security** for sensitive data. 
+* ***Workflow:***  
+🔹 A user **performs an action** (e.g., sends a message).     
+🔹 The event is **broadcasted to a specific channel**.
+🔹 Only authorized clients receive the update.    
+* ***When is it needed?***  
+🔹 When real-time events require **restricted access** based on user roles or authentication..      
 
 
 #### Settings, Configurations, Package Installations:
