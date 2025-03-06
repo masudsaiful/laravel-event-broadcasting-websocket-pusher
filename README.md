@@ -1,5 +1,8 @@
+
 #### Real Scenario:
 Imagine you have a Laravel application where admin doing some tasks like:  sending email to users from the application’s email facilities. So, how the logged in user knows that an important email dispatched to him while he is also doing his task in the application? May be the logged in user by clicking the email lists button to check if there has any new email arrived or may be another option – automatic notification that a new email arrived. For the first scenario when clicking email list button to view, an API request can call to retrieve the email list or by refreshing, reloading pages but for the second, need a mechanism to notify user that a new email arrived and here comes the WebSockets that are used to implement real-time, live-updating user interfaces.
+
+
 
 
 #### Websocket and Laravel Broadcasting:
@@ -13,6 +16,8 @@ According Laravel the core concepts behind broadcasting are simple: clients conn
 > * The frontend listens to the events using Laravel Echo and updates the UI
 
 
+
+
 #### Supporting Drivers according Laravel 12.x:
 **There are currently three server-side broadcasting drivers by default in Laravel:**        
 > * [Laravel Reverb](https://reverb.laravel.com/)   
@@ -20,6 +25,8 @@ According Laravel the core concepts behind broadcasting are simple: clients conn
 > * [Ably]( https://ably.com/)
   
 In this article we will discuss in details about ‘Pusher’, the most popular, old and leader in realtime communication. By incorporating Laravel’s event broadcasting using ‘Pusher’ connection client can be handled with updated datas in the frontend without refreshing or reloading pages while data updated in the backend.
+
+
 
 
 #### Prerequisite Knowledge:
@@ -69,11 +76,28 @@ Since we are working with **Laravel event broadcasting**, we will use **Pusher C
 * ***Purpose:***  
 🔹 Receives **real-time event updates** from the backend and updates the UI accordingly.          
 * ***Workflow:***  
-🔹 he frontend subscribes to a **broadcast channel** using Laravel Echo.     
+🔹 The frontend subscribes to a **broadcast channel** using Laravel Echo.     
 🔹 When an event is broadcasted, Echo **listens and receives the event data**.  
 🔹 The UI is **updated dynamically** based on the event data.    
 * ***When is it needed?***  
 🔹 When implementing real-time features in **React, Vue, or any frontend framework** with Laravel.
+
+
+#### Necessary Package Installation:
+###### (A) Backend (Laravel) Package Installation:
+
+* ***Install Laravel Pusher Package:***  
+```php
+  composer require pusher/pusher-php-server
+```
+***Why is this package necessary?***  
+🔹 It provides Laravel with the ability to **send events to Pusher**.     
+🔹 The `pusher/pusher-php-server` package acts as a bridge between Laravel and Pusher.    
+***How does it work? (Workflow)***  
+🔹 When an event occurs (e.g., user creation), Laravel **dispatches an event**.     
+🔹 This package takes the event data and **sends it to Pusher**.    
+🔹 Pusher then **broadcasts it to all subscribed clients** in real-time.  
+
 
 
 #### Settings, Configurations, Package Installations:
@@ -135,5 +159,3 @@ Once **config/broadcasting.php** configuration file, find the **pusher** section
   ],
 ```   
 Ensure that set `useTLS => true` for secure WebSocket connections.
-
-
