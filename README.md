@@ -87,10 +87,10 @@ Since we are working with **Laravel event broadcasting**, we will use **Pusher C
 ```php
   composer require pusher/pusher-php-server
 ```
-***Why is this package necessary?***  
+* ***Why is this package necessary?***  
 🔹 It provides Laravel with the ability to **send events to Pusher**.     
 🔹 The `pusher/pusher-php-server` package acts as a bridge between Laravel and Pusher.    
-***How does it work? (Workflow)***  
+* ***How does it work? (Workflow)***  
 🔹 When an event occurs (e.g., user creation), Laravel **dispatches an event**.     
 🔹 This package takes the event data and **sends it to Pusher**.    
 🔹 Pusher then **broadcasts it to all subscribed clients** in real-time.  
