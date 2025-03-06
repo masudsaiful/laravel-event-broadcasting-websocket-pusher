@@ -86,7 +86,7 @@ Since we are working with **Laravel event broadcasting**, we will use **Pusher C
 ###### (A) Backend (Laravel) Package Installation:  
 * ***Install Laravel Pusher Package:***  
 ```php
-  composer require pusher/pusher-php-server
+    composer require pusher/pusher-php-server
 ```
 * ***Why is this package necessary?***  
 🔹 It provides Laravel with the ability to **send events to Pusher**.     
@@ -99,7 +99,7 @@ Since we are working with **Laravel event broadcasting**, we will use **Pusher C
 ###### (B) Frontend (React) Package Installation:  
 * ***Install Laravel Echo & Pusher JS Library:***  
 ```php
-  npm install --save laravel-echo pusher-js
+    npm install --save laravel-echo pusher-js
 ```
 * ***Why is this package necessary?***  
 🔹 `laravel-echo` Helps React listen for Laravel events.     
@@ -112,7 +112,7 @@ Since we are working with **Laravel event broadcasting**, we will use **Pusher C
 
 
 
-#### Settings, Configurations, Package Installations:
+#### Settings and Configurations:
 ###### (A) Event and Listener:
 Though Laravel utilize event broadcasting by using **Pusher** channel (also **Reverb**, **Ably**) to make realtime communication of datas between server and client it is very important to know about Laravel’s [events and listeners]( https://laravel.com/docs/12.x/events).
 
@@ -142,17 +142,17 @@ Once we have the **Pusher** credentials, we can now configure them in Laravel.<b
 ***Step 1: Add Credential to Laravel .env file***  
 Open .env in Laravel Project and add:
 ```php
-  PUSHER_APP_ID:your_app_id      
-  PUSHER_APP_KEY:your_app_key      
-  PUSHER_APP_SECRET:your_app_secret  
-  PUSHER_APP_CLUSTER:your_app_cluster
+    PUSHER_APP_ID:your_app_id      
+    PUSHER_APP_KEY:your_app_key      
+    PUSHER_APP_SECRET:your_app_secret  
+    PUSHER_APP_CLUSTER:your_app_cluster
 ```
 Replace **your_app_id, your_app_key, your_app_secret, your_app_cluster** with the actual values from the **Pusher dashboard**.
 
 ***Step 2: Check Configuration and Channels in Laravel***  
 If you have no `config/broadcasting.php` and `routes/channels` files in your Laravel project, run the following command in terminal.     
 ```php
-  php artisan install:broadcasting
+    php artisan install:broadcasting
 ```
 This command will create the `config/broadcasting.php` and `routes/channels` files.
 
