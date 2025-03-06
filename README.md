@@ -56,7 +56,7 @@ Since we are working with **Laravel event broadcasting**, we will use **Pusher C
 🔹 Ensures **security** for sensitive data. 
 * ***Workflow:***  
 🔹 A user **performs an action** (e.g., sends a message).     
-🔹 The event is **broadcasted to a specific channel**.
+🔹 The event is **broadcasted to a specific channel**.  
 🔹 Only authorized clients receive the update.    
 * ***When is it needed?***  
 🔹 When real-time events require **restricted access** based on user roles or authentication.      
@@ -70,7 +70,7 @@ Since we are working with **Laravel event broadcasting**, we will use **Pusher C
 🔹 Receives **real-time event updates** from the backend and updates the UI accordingly.          
 * ***Workflow:***  
 🔹 he frontend subscribes to a **broadcast channel** using Laravel Echo.     
-🔹 When an event is broadcasted, Echo **listens and receives the event data**.
+🔹 When an event is broadcasted, Echo **listens and receives the event data**.  
 🔹 The UI is **updated dynamically** based on the event data.    
 * ***When is it needed?***  
 🔹 When implementing real-time features in **React, Vue, or any frontend framework** with Laravel.
