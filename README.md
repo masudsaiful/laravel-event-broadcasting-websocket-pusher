@@ -49,7 +49,7 @@ Since we are working with **Laravel event broadcasting**, we will use **Pusher C
 🔹 Laravel supports public, private, and presence channels.  
 * ***Types of Channels:***  
 🔹 **Public Channel** → Anyone can listen (e.g., general announcements).     
-🔹 **Private Channel** → Only authorized users can listen (e.g., notifications for a specific user).
+🔹 **Private Channel** → Only authorized users can listen (e.g., notifications for a specific user).  
 🔹 **Presence Channel** → Like private channels but tracks active users (e.g., online user lists).     
 * ***Purpose:***  
 🔹 Controls **who can access broadcasted events**.     
