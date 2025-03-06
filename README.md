@@ -42,6 +42,21 @@ Pusher offers two services:
 🔹 **Pusher Beams** → Used for push notifications (Not needed for Laravel broadcasting).    
 Since we are working with **Laravel event broadcasting**, we will use **Pusher Channels**.
 
+###### (C) Broadcast Channels:
+In this article we are focusing mainly on **Pusher**, a **websocket service** that Laravel uses to **Broadcast Events**. It allows real-time updates without page reloads between the Laravel backend and the frontend (**React**, **Vue**, etc.) using **WebSockets**.
+
+* ***Pusher Event Broadcasting Flow in Laravel:***    
+🔹 **User Action** → Any action (e.g., creating or updating or deleting a user etc.).   
+🔹 **Event Fired** → Dispatched event when an action occured (e.g., UserCreated event dispatched on user create action).  
+🔹 **Event Broadcast** → Sent via Pusher Websockets.   
+🔹 **Client Listens** → Frontend or JavaScript listens to Pusher updates.  
+🔹 **UI Updates in Real-Times**
+* ***Type of Pusher Services:***  
+Pusher offers two services:  
+🔹 **Pusher Channels** → Used for real-time event broadcasting (This is what we need for Laravel).     
+🔹 **Pusher Beams** → Used for push notifications (Not needed for Laravel broadcasting).    
+Since we are working with **Laravel event broadcasting**, we will use **Pusher Channels**.
+
 
 #### Settings, Configurations, Package Installations:
 ###### (A) Event and Listener:
