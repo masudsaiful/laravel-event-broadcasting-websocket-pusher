@@ -7,6 +7,11 @@ When some data is updated on the server, sometimes client need to be handled the
 
 According Laravel the core concepts behind broadcasting are simple: clients connect to named channels on the frontend, while your Laravel application broadcasts events to these channels on the backend. These events can contain any additional data you wish to make available to the frontend.
 
+At a glance Laravel Event Broadcasting Workflow:        
+> * The backend dispatches an event to hosted websocket   
+> * The hosted websocket broadcast the event to listen by the subscribers  
+> * The frontend listens to the events using Laravel Echo and updates the UI
+
 
 #### Supporting Drivers according Laravel 12.x:
 There are currently three server-side broadcasting drivers by default in Laravel:        
