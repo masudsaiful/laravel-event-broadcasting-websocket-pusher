@@ -197,6 +197,26 @@ This file controls **who can listen to private broadcast channels**.
 ***Why is this necessary?***    
 🔹 Stores Pusher credentials for use in `echo.js`.     
 
+###### (B) Configure Laravel Echo in React:
+***Inside the React project, create a new file `src/echo.js`:***
+```php
+    import Echo from 'laravel-echo';
+    import Pusher from 'pusher-js';
+    
+    window.Pusher = Pusher;
+    
+    const echo = new Echo({
+        broadcaster: 'pusher',
+        key: process.env.REACT_APP_PUSHER_APP_KEY,
+        cluster: process.env.REACT_APP_PUSHER_APP_CLUSTER,
+        encrypted: true
+    });
+    
+    export default echo;
+```   
+***Why is this necessary?***    
+🔹 Sets up Laravel `Echo` to listen for events from Pusher in React.     
+
 
 
 
