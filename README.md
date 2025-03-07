@@ -157,7 +157,7 @@ Laravel already includes the `BroadcastServiceProvider`. Ensure it's enabled in 
 
 ###### (D) inside `app/Providers/BroadcastServiceProvider.php`, update the `boot()` method::
 
-* ***config/broadcasting.php Configuration:***  
+* ***By default boot() should be like the following:***  
 ```php
     public function boot()
     {
