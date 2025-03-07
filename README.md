@@ -112,7 +112,7 @@ Since we are working with **Laravel event broadcasting**, we will use **Pusher C
 
 
 
-#### Settings and Configurations:
+#### Settings and Configurations (Laravel):
 ###### (A) Enable Laravel Broadcasting by Configuring .env:
 Laravel needs to know which broadcasting driver to use. Since, we are using **Pusher**, we set BROADCAST_DRIVER=pusher. The app ID, key, secret, and cluster that we already get from **Pusher Dashboard**, ensure secure communication between Laravel and Pusher.  
 
@@ -172,7 +172,7 @@ Laravel already includes the `BroadcastServiceProvider`. Ensure it's enabled in 
 ###### (E) Define a Broadcast Channel in `routes/channels.php`:
 This file controls **who can listen to private broadcast channels**.  
 
-* ***`config/broadcasting.php` Configuration:***  
+* ***`routes/channels.php` Defined:***  
 ```php
     use Illuminate\Support\Facades\Broadcast;
     
