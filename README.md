@@ -172,7 +172,7 @@ Laravel already includes the `BroadcastServiceProvider`. Ensure it's enabled in 
 ###### (E) Define a Broadcast Channel in `routes/channels.php`:
 This file controls **who can listen to private broadcast channels**.  
 
-* ***config/broadcasting.php Configuration:***  
+* ***`config/broadcasting.php` Configuration:***  
 ```php
     use Illuminate\Support\Facades\Broadcast;
     
