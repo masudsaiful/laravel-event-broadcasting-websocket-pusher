@@ -147,6 +147,28 @@ Open `config/broadcasting.php` and update the `connections` array:.
 🔹 This ensures Laravel uses **Pusher as the broadcast driver**.     
 🔹 `useTLS => true` ensures **secure WebSocket communication** with Pusher.      
 
+###### (C) Check Broadcast Service Provider is Enabled:
+Laravel already includes the `BroadcastServiceProvider`. Ensure it's enabled in `config/app.php`:.  
+
+* ***BroadcastServiceProvider should be enabled in config/app.php:***  
+```php
+    App\Providers\BroadcastServiceProvider::class,
+```
+
+###### (D) inside `app/Providers/BroadcastServiceProvider.php`, update the `boot()` method::
+
+* ***config/broadcasting.php Configuration:***  
+```php
+    public function boot()
+    {
+        Broadcast::routes();
+        require base_path('routes/channels.php');
+    }
+```
+* ***Why is this necessary?***  
+🔹 `Broadcast::routes();` registers **broadcasting routes**.     
+🔹 `routes/channels.php` defines **who can listen to private events**.
+
 
 
 
