@@ -169,6 +169,21 @@ Laravel already includes the `BroadcastServiceProvider`. Ensure it's enabled in 
 🔹 `Broadcast::routes();` registers **broadcasting routes**.     
 🔹 `routes/channels.php` defines **who can listen to private events**.
 
+###### (E) Define a Broadcast Channel in `routes/channels.php`:
+This file controls **who can listen to private broadcast channels**.  
+
+* ***config/broadcasting.php Configuration:***  
+```php
+    use Illuminate\Support\Facades\Broadcast;
+    
+    Broadcast::channel('users.{userId}', function ($user, $userId) {
+        return (int) $user->id === (int) $userId;
+    });
+```
+* ***Why is this necessary?***  
+🔹 This ensures only **authorized users** can listen to a private channel (e.g., users.5 is for user ID 5).     
+🔹 Without this, **anyone could listen** to private broadcasts, causing security risks.
+
 
 
 
