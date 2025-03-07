@@ -221,6 +221,69 @@ This file controls **who can listen to private broadcast channels**.
 
 
 
+#### Laravel Backend Implementation:
+###### (A) Event and Listener:
+Though Laravel utilize event broadcasting by using **Pusher** channel (also **Reverb**, **Ably**) to make realtime communication of datas between server and client it is very important to know about Laravel’s [events and listeners]( https://laravel.com/docs/12.x/events).
+
+###### (B) Pusher:
+In this article we are focusing mainly on **Pusher**, a **websocket service** that Laravel uses to **Broadcast Events**. It allows real-time updates without page reloads between the Laravel backend and the frontend (**React**, **Vue**, etc.) using **WebSockets**.
+
+* ***How to Get Pusher Credentials (Free Signup) (Laravel 11.x and 12.x perspective):***  
+***Step 1: Create a Free Pusher Account***  
+🔹 Got to **[Pusher's Website](https://pusher.com/)**.     
+🔹 Click on **Sign up** for free.    
+🔹 Follow the Instructions.  
+🔹 **Verify E-mail** if required.<br /><br />
+***Step 2: Create a New Pusher App***  
+🔹 After logging in, go to **Pusher Dashboard**.     
+🔹 Click **Create App**.    
+🔹 Select **Frontend** and **Backend** technologies.  
+🔹 Click **Create App**.<br /><br /> 
+***Step 3: Get Pusher Credentials***  
+Once the app is created, you will see the **App Keys**  
+🔹 **App ID**.     
+🔹 **Key**.    
+🔹 **Secret**.  
+🔹 **Cluster**.   
+These credentials are needed for **Laravel Broadcasting**
+* ***Configure Pusher in Laravel 11.x or 12.x:***  
+Once we have the **Pusher** credentials, we can now configure them in Laravel.<br /><br /> 
+***Step 1: Add Credential to Laravel .env file***  
+Open .env in Laravel Project and add:
+```php
+    PUSHER_APP_ID:your_app_id      
+    PUSHER_APP_KEY:your_app_key      
+    PUSHER_APP_SECRET:your_app_secret  
+    PUSHER_APP_CLUSTER:your_app_cluster
+```
+Replace **your_app_id, your_app_key, your_app_secret, your_app_cluster** with the actual values from the **Pusher dashboard**.
+
+***Step 2: Check Configuration and Channels in Laravel***  
+If you have no `config/broadcasting.php` and `routes/channels` files in your Laravel project, run the following command in terminal.     
+```php
+    php artisan install:broadcasting
+```
+This command will create the `config/broadcasting.php` and `routes/channels` files.
+
+***Step 3: Configure Broadcasting in Laravel***    
+Once **config/broadcasting.php** configuration file, find the **pusher** section and ensure it matches.   
+```php
+  'pusher' => [
+      'driver' => 'pusher',
+      'key' => env('PUSHER_APP_KEY'),
+      'secret' => env('PUSHER_APP_SECRET'),
+      'app_id' => env('PUSHER_APP_ID'),
+      'options' => [
+          'cluster' => env('PUSHER_APP_CLUSTER'),
+          'useTLS' => true,
+      ],
+  ],
+```   
+Ensure that set `useTLS => true` for secure WebSocket connections.
+
+
+
+
 #### Settings and Configurations:
 ###### (A) Event and Listener:
 Though Laravel utilize event broadcasting by using **Pusher** channel (also **Reverb**, **Ably**) to make realtime communication of datas between server and client it is very important to know about Laravel’s [events and listeners]( https://laravel.com/docs/12.x/events).
