@@ -155,7 +155,7 @@ Laravel already includes the `BroadcastServiceProvider`. Ensure it's enabled in 
     App\Providers\BroadcastServiceProvider::class,
 ```
 
-###### (D) inside `app/Providers/BroadcastServiceProvider.php`, update the `boot()` method::
+###### (D) inside `app/Providers/BroadcastServiceProvider.php`, update the `boot()` method:
 
 * ***By default boot() should be like the following:***  
 ```php
@@ -183,6 +183,29 @@ This file controls **who can listen to private broadcast channels**.
 * ***Why is this necessary?***  
 🔹 This ensures only **authorized users** can listen to a private channel (e.g., users.5 is for user ID 5).     
 🔹 Without this, **anyone could listen** to private broadcasts, causing security risks.
+
+
+
+
+#### Settings and Configurations (React):
+###### (B) Update `.env` in React:
+Inside your React project, add the following to the `.env` file:.
+
+* ***React .env file***  
+Once **config/broadcasting.php** configuration file, find the **pusher** section and ensure it matches.   
+```php
+  'pusher' => [
+      'driver' => 'pusher',
+      'key' => env('PUSHER_APP_KEY'),
+      'secret' => env('PUSHER_APP_SECRET'),
+      'app_id' => env('PUSHER_APP_ID'),
+      'options' => [
+          'cluster' => env('PUSHER_APP_CLUSTER'),
+          'useTLS' => true,
+      ],
+  ],
+```   
+Ensure that set `useTLS => true` for secure WebSocket connections.
 
 
 
