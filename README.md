@@ -113,6 +113,37 @@ Since we are working with **Laravel event broadcasting**, we will use **Pusher C
 
 
 #### Settings and Configurations:
+###### (A) Enable Laravel Broadcasting by Configuring .env:
+Laravel needs to know which broadcasting driver to use. Since, we are using **Pusher**, we set BROADCAST_DRIVER=pusher. The app ID, key, secret, and cluster that we already get from **Pusher Dashboard**, ensure secure communication between Laravel and Pusher.  
+
+* ***.env Configuration:***  
+```php
+    BROADCAST_DRIVER=pusher
+    PUSHER_APP_ID=your_app_id
+    PUSHER_APP_KEY=your_app_key
+    PUSHER_APP_SECRET=your_app_secret
+    PUSHER_APP_CLUSTER=your_cluster
+```
+
+###### (B) Configure `config/broadcasting.php`:
+Open `config/broadcasting.php` and update the `connections` array:.  
+
+* ***.env Configuration:***  
+```php
+    BROADCAST_DRIVER=pusher
+    PUSHER_APP_ID=your_app_id
+    PUSHER_APP_KEY=your_app_key
+    PUSHER_APP_SECRET=your_app_secret
+    PUSHER_APP_CLUSTER=your_cluster
+```
+* ***Why is this necessary?***  
+🔹 This ensures Laravel uses **Pusher as the broadcast driver**.     
+🔹 `useTLS => true` ensures **secure WebSocket communication** with Pusher.      
+
+
+
+
+#### Settings and Configurations:
 ###### (A) Event and Listener:
 Though Laravel utilize event broadcasting by using **Pusher** channel (also **Reverb**, **Ably**) to make realtime communication of datas between server and client it is very important to know about Laravel’s [events and listeners]( https://laravel.com/docs/12.x/events).
 
