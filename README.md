@@ -128,7 +128,7 @@ Laravel needs to know which broadcasting driver to use. Since, we are using **Pu
 ###### (B) Configure `config/broadcasting.php`:
 Open `config/broadcasting.php` and update the `connections` array:.  
 
-* ***.env Configuration:***  
+* ***config/broadcasting.php Configuration:***  
 ```php
     'connections' => [
         'pusher' => [
