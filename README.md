@@ -189,23 +189,14 @@ This file controls **who can listen to private broadcast channels**.
 
 #### Settings and Configurations (React):
 ###### (B) Update `.env` in React:
-Inside your React project, add the following to the `.env` file:.
-
-* ***React .env file***  
-Once **config/broadcasting.php** configuration file, find the **pusher** section and ensure it matches.   
+Inside your React project, add the following to the `.env` file:.  
+***React .env file***  
 ```php
-  'pusher' => [
-      'driver' => 'pusher',
-      'key' => env('PUSHER_APP_KEY'),
-      'secret' => env('PUSHER_APP_SECRET'),
-      'app_id' => env('PUSHER_APP_ID'),
-      'options' => [
-          'cluster' => env('PUSHER_APP_CLUSTER'),
-          'useTLS' => true,
-      ],
-  ],
-```   
-Ensure that set `useTLS => true` for secure WebSocket connections.
+    REACT_APP_PUSHER_APP_KEY=your_pusher_app_key
+    REACT_APP_PUSHER_APP_CLUSTER=your_pusher_app_cluster
+```
+***Why is this necessary?***    
+🔹 Stores Pusher credentials for use in echo.js.    
 
 
 
@@ -254,7 +245,7 @@ If you have no `config/broadcasting.php` and `routes/channels` files in your Lar
 ```
 This command will create the `config/broadcasting.php` and `routes/channels` files.
 
-***Step 3: Configure Broadcasting in Laravel***  
+***Step 3: Configure Broadcasting in Laravel***    
 Once **config/broadcasting.php** configuration file, find the **pusher** section and ensure it matches.   
 ```php
   'pusher' => [
