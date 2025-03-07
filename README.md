@@ -130,11 +130,18 @@ Open `config/broadcasting.php` and update the `connections` array:.
 
 * ***.env Configuration:***  
 ```php
-    BROADCAST_DRIVER=pusher
-    PUSHER_APP_ID=your_app_id
-    PUSHER_APP_KEY=your_app_key
-    PUSHER_APP_SECRET=your_app_secret
-    PUSHER_APP_CLUSTER=your_cluster
+    'connections' => [
+        'pusher' => [
+            'driver' => 'pusher',
+            'key' => env('PUSHER_APP_KEY'),
+            'secret' => env('PUSHER_APP_SECRET'),
+            'app_id' => env('PUSHER_APP_ID'),
+            'options' => [
+                'cluster' => env('PUSHER_APP_CLUSTER'),
+                'useTLS' => true,
+            ],
+        ],
+    ],
 ```
 * ***Why is this necessary?***  
 🔹 This ensures Laravel uses **Pusher as the broadcast driver**.     
