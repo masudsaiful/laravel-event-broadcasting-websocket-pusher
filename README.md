@@ -188,9 +188,9 @@ This file controls **who can listen to private broadcast channels**.
 
 
 #### Settings and Configurations (React):
-###### (B) Update `.env` in React:
-Inside your React project, add the following to the `.env` file:.  
-***React .env file***  
+###### (A) Update `.env` in React:
+Inside your React project, add the following to the `.env` file:.    
+***React .env file***
 ```php
     REACT_APP_PUSHER_APP_KEY=your_pusher_app_key
     REACT_APP_PUSHER_APP_CLUSTER=your_pusher_app_cluster
