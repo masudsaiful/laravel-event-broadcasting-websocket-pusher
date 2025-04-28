@@ -1,5 +1,5 @@
 #### Real Scenario:
-Imagine you have a Laravel application where admin doing some tasks like:  sending email to users from the application’s email facilities. So, how the logged in user knows that an important email dispatched to him while he is also doing his task in the application? May be the logged in user by clicking the email lists button to check if there has any new email arrived or may be another option – automatic notification that a new email arrived. For the first scenario when clicking email list button to view, an API request can call to retrieve the email list or by refreshing, reloading pages but for the second, need a mechanism to notify user that a new email arrived and here comes the WebSockets that are used to implement real-time, live-updating user interfaces.
+Imagine a multi-tenant application where, when a new user is created, there is a ref_by column that stores the parent user's ID. At the client side, how can the parent user know that a new user has been created? Either the parent user would need to manually refresh the page to see the updated status, or we need a mechanism to automatically update the client in real-time. This is where WebSockets come in — they allow us to implement real-time, live-updating user interfaces without requiring page refreshes.
 
 
 
@@ -11,7 +11,7 @@ According Laravel the core concepts behind broadcasting are simple: clients conn
 
 **At a glance Laravel Event Broadcasting Workflow:**        
 > * The backend dispatches an event to hosted websocket   
-> * The hosted websocket broadcast the event to listen by the subscribers  
+> * The hosted websocket broadcast (like Pusher) the event to listen by the subscribers  
 > * The frontend listens to the events using Laravel Echo and updates the UI
 
 
@@ -23,7 +23,7 @@ According Laravel the core concepts behind broadcasting are simple: clients conn
 > * [Pusher Channels](https://pusher.com/channels)   
 > * [Ably]( https://ably.com/)
   
-In this article we will discuss in details about ‘Pusher’, the most popular, old and leader in realtime communication. By incorporating Laravel’s event broadcasting using ‘Pusher’ connection client can be handled with updated datas in the frontend without refreshing or reloading pages while data updated in the backend.
+In this article we will discuss in details about __‘Pusher’__, the most popular, old and leader in realtime communication. By incorporating Laravel’s event broadcasting using __‘Pusher’__ connection client can be handled with updated datas in the frontend without refreshing or reloading pages while data updated in the backend.
 
 
 
@@ -34,7 +34,14 @@ Before getting started let's take a look of the followings that are needed while
 ###### (A) Event and Listener:
 Though Laravel utilize event broadcasting by using **Pusher** channel (also **Reverb**, **Ably**) to make realtime communication of datas between server and client it is very important to know about Laravel’s [events and listeners]( https://laravel.com/docs/12.x/events).
 
-###### (B) Pusher:
+
+
+###### (B) Queue:
+Laravel provides queue workers to manage tasks asynchronously, allowing tasks to run in parallel without blocking each other. To use queues, you need to configure a queue driver and create jobs that handle specific tasks. In Laravel, all event broadcasting is handled through queued jobs to ensure that the application's response time is not seriously impacted by broadcasting events. Therefore, before starting with __Laravel Event Broadcasting__, it is important to have at least a basic understanding of [Laravel Queues](https://laravel.com/docs/12.x/queues).
+
+
+
+###### (C) Pusher:
 In this article we are focusing mainly on **Pusher**, a **websocket service** that Laravel uses to **Broadcast Events**. It allows real-time updates without page reloads between the Laravel backend and the frontend (**React**, **Vue**, etc.) using **WebSockets**.  
 * ***Pusher Event Broadcasting Flow in Laravel:***    
 🔹 **User Action** → Any action (e.g., creating or updating or deleting a user etc.).   
@@ -48,7 +55,7 @@ Pusher offers two services:
 🔹 **Pusher Beams** → Used for push notifications (Not needed for Laravel broadcasting).    
 Since we are working with **Laravel event broadcasting**, we will use **Pusher Channels**.
 
-###### (C) Broadcast Channels:  
+###### (D) Broadcast Channels:  
 * ***What is it?:***    
 🔹 Channels define who can listen to a broadcasted event.   
 🔹 Laravel supports public, private, and presence channels.  
@@ -66,7 +73,7 @@ Since we are working with **Laravel event broadcasting**, we will use **Pusher C
 * ***When is it needed?***  
 🔹 When real-time events require **restricted access** based on user roles or authentication.      
 
-###### (D) Laravel Echo:  
+###### (E) Laravel Echo:  
 * ***What is it?:***    
 🔹 A JavaScript library that listens for Laravel’s broadcasted events on the frontend.   
 🔹 Works with WebSockets (via Pusher, Redis, or others).  
